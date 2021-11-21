@@ -99,11 +99,11 @@ with dataset:
                     regr = LinearRegression()
                     regr.fit(np.array(x_train).reshape(-1,1), y_train) #Reshape transverses it from a single dimension matrix to a vertical shape
                     preds = regr.predict(np.array(x_test).reshape(-1,1))
-                    st.write('The expected mean value of feature is ', regr.intercept_)
+                    st.write('The expected mean value of possible cause is ', regr.intercept_)
                     y_pred = regr.predict(np.array(x_test).reshape(-1,1))
 
                     #Evaluation of model
-                    st.markdown('Evaluation of the model')
+                    st.markdown(**'Evaluation of the model:'**)
                     st.write('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
                     st.write('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
                     st.write('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
