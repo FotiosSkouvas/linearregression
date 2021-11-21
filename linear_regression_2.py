@@ -103,7 +103,7 @@ with dataset:
                     y_pred = regr.predict(np.array(x_test).reshape(-1,1))
 
                     #Evaluation of model
-                    st.markdown(**'Evaluation of the model:'**)
+                    st.markdown('*Evaluation of the model:*')
                     st.write('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
                     st.write('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
                     st.write('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
