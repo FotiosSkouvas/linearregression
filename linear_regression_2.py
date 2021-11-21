@@ -94,6 +94,7 @@ with dataset:
                 #Data modeling
                 with data_modeling:
                     st.header('Model Training')
+                    st.markdown('We decided to use linear regression for a selected failure and a selected possible cause. We used only the data that fails, in order to achieve better performance of the model. You will find below the prediction and the evaluation of the model:')
                     x_train, x_test, y_train, y_test = train_test_split(pred_data_root[failure], pred_data_root[feat], test_size = 0.2)
                     regr = LinearRegression()
                     regr.fit(np.array(x_train).reshape(-1,1), y_train) #Reshape transverses it from a single dimension matrix to a vertical shape
