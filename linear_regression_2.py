@@ -78,15 +78,15 @@ with dataset:
                 #Data quering
                 with data_quering:
                     st.header('Data Quering')
-                    st.markdown('You will now have the opportunity to identify the contribution of failure and possible root causes')
-                    failure = st.selectbox('Please select a failure category of your system:',
+                    st.markdown('You will now have the opportunity to identify the contribution of a selected failure and a possible selected cause')
+                    failure = st.selectbox('Please select a possible failure of your system:',
                     pred_data.columns)
                     pred_data_root = pred_data[pred_data[failure]==1]
                     st.write('Total number of this category failures in your database: ', len(pred_data_root))
                     percentage = len(pred_data_root)/len(pred_data)*100
                     st.write(percentage, '% of observations failed due to this failure category')
                     st.markdown('The contribution of which feature would you like to observe for the selected root cause?')
-                    feat = st.selectbox('Please select a possible root cause of your system:',
+                    feat = st.selectbox('Please select a possible cause of your system:',
                     pred_data.columns)
                     pred_data_feat = pred_data_root[feat].value_counts()
                     st.write(pred_data_feat)
