@@ -91,9 +91,10 @@ with dataset:
                     pred_data_feat = pred_data_root[feat].value_counts()
                     st.write(pred_data_feat)
 
-                #Data modelinγ
+                #Data modeling
                 with data_modeling:
                     st.header('Model Training')
+                    st.markdown('*Our application uses linear regression method between the selecet failure and the selected cause. In order to reduce to error, the application uses the dataset that the selected failure = 1*')
                     x_train, x_test, y_train, y_test = train_test_split(pred_data_root[failure], pred_data_root[feat], test_size = 0.2)
                     regr = LinearRegression()
                     regr.fit(np.array(x_train).reshape(-1,1), y_train) #Reshape transverses it from a single dimension matrix to a vertical shape
